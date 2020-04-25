@@ -1,0 +1,394 @@
+
+<app-footer style="position: fixed;
+bottom: 0;
+width: 100%;
+line-height: 60px;"></app-footer>
+
+
+
+
+
+
+<style>
+  .container, .container-fluid {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .sidebar {
+    width: 23rem!important;
+  }
+ .bg-gradient-primary {
+   background-image: linear-gradient(180deg, #1f2d33 10%, rgba(94, 107, 135, 0.82) 100%);
+ }
+
+  .sidebar .sidebar-brand {
+    height: 4.375rem;
+    font-size: 2rem;
+    font-weight: 650;
+    padding: 0.1rem 0.2rem;
+    letter-spacing: .07rem;
+  }
+
+  .list-group-item.active {
+
+    color: #fff;
+    background-color: #0c1a43;
+    border-color: #000000;
+  }
+  .list-group-item {
+    text-align: center;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.25rem;
+    background-color:  #0c1a43;
+    border: 2px solid #fff;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+    background-color: #0c1a43;
+  }
+  .list-group-item.active {
+    color: #fff;
+    background-color: #0c1a43;
+    border-color: #000000;
+  }
+  .sidebar .nav-item .nav-link {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 1.3rem;
+    width: 18.5rem;
+  }
+  .navbar-light .navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1.5em;
+    padding:0.5rem 1.5rem 0.5rem 1.5rem;
+    border-radius:1rem;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+  }
+</style>
+<nav class="navbar navbar-light" style="background-color:white" id="topnav">
+  <a class="navbar-brand " href="#" style="background-color: white; color: white;"><img src="../../assets/asset-1.png" style="max-width: 110px;"></a>
+  <div class="navbar-header navbar-right pull-right">
+    <a style="color: gray; background-color: white;" [routerLink]="['/dashboard']" class="navtext">Dashboard</a>&nbsp;
+
+    <a style="color: gray; background-color: white;" [routerLink]="['/register']" class="navtext">Register</a>
+    &nbsp;
+    <a style="color: gray; background-color: white;" [routerLink]="['/about']" class="navtext">About</a>
+
+    </div>
+</nav>
+<body id="page-top">
+<!-- Page Wrapper -->
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: white;">
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" style="background-color: white; border-bottom: gray 2px solid;">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3" style="color: white;"><img src="../../assets/asset-1.png" style="width: 100%;
+          height: auto; max-width: 300px"></div>
+      </a>
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link "  [routerLink]="['/dashboard']" style="background-color: white;">
+          <i class="fa fa-dashboard" style="color: gray;"></i>
+          <span style="color: gray;">Dashboard</span></a>
+      </li>
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Home -->
+      <li class="nav-item active" >
+        <a class="nav-link bg-primary" [routerLink]="['/register']" >
+          <i class="fa fa-user-plus" style="color: white;"></i>
+          <span style="color: white;">Register</span></a>
+      </li>
+
+          <!-- Divider -->
+       <!-- Nav Item - Home -->
+       <li class="nav-item active" >
+        <a class="nav-link" [routerLink]="['/about']" style="background-color: white;">
+          <i class="fa fa-address-card" style="color: gray;"></i>
+          <span style="color: gray;">About</span></a>
+      </li>
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column" style="background-image: url('../../assets/3485318.png'); background-repeat: no-repeat;
+    background-size: cover;">
+
+      <!-- Main Content -->
+      <div id="content">
+
+
+
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          <!-- Content Row -->
+
+
+          <!-- Content Row -->
+
+          <div class="container" >
+            <div class="row justify-content-between">
+              <div style="padding-left: 5%; padding-top: 5%; margin-left: -5px;">
+                <mat-vertical-stepper [linear]="!isLinear" #stepper style="opacity: 0.9; padding: 15px;">
+                  <mat-step [stepControl]="firstFormGroup">
+                    <form [formGroup]="firstFormGroup">
+                      <ng-template matStepLabel ><span class="Contact">Fill out your contact number</span><br><span >(अपना संपर्क नंबर भरें)</span> </ng-template>
+                      <br>
+                      <mat-form-field>
+                        <mat-label><span class="label" style="margin-top: 10px;">Phone Number</span></mat-label>
+                        <input matInput placeholder="+91xxxxxxxxxx" formControlName="firstCtrl" required maxlength='10' >
+                      </mat-form-field>
+                      <div>
+                        <button mat-raised-button  color="primary" matStepperNext>Next</button>
+                      </div>
+                    </form>
+                  </mat-step>
+
+                  <mat-step [stepControl]="secondFormGroup">
+                    <form [formGroup]="secondFormGroup">
+                      <ng-template matStepLabel><span class="Contact">Fill out your address</span><br><span>
+                        (अपना पता भरें)</span></ng-template>
+                        <br>
+                      <mat-form-field>
+
+                        <mat-label ><span class="label">Locality</span>  <span>(स्थानीयता)</span></mat-label>
+                        <input matInput formControlName="firstCtrl"
+                               required>
+                      </mat-form-field>
+
+                      <br>
+                      <mat-form-field>
+                        <mat-label class="label"><span class="label">City</span>  <span>(शहर)</span></mat-label>
+                        <input matInput formControlName="thirdCtrl"
+                               required>
+                      </mat-form-field>
+                      <br>
+                      <mat-form-field>
+                        <mat-label class="label"><span class="label">State</span>  <span>(राज्य)</span></mat-label>
+                        <input matInput formControlName="fourthCtrl" appUppercase
+                               required>
+                      </mat-form-field>
+                      <div>
+                        <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng" style="height: 300px; " >
+                          <agm-marker  [latitude]="lat" [longitude]="lng"></agm-marker>
+                        </agm-map>
+                      </div>
+                      <br>
+
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-raised-button  color="primary" matStepperNext>Next</button>
+                    </form>
+
+                  </mat-step>
+                  <mat-step >
+                    <ng-template matStepLabel><span class="Contact">Answer these questions</span><br> <span >(इन सवालों के जवाब दें)</span></ng-template>
+                    <br>
+                    <label id="electricity" class="label"><span class="label">Is there electricity during day?</span><br><span>(क्या दिन में बिजली मिलती है?)</span></label>
+                    <br>
+                    <br>
+                <mat-radio-group
+                  aria-labelledby="electricityDay"
+                  class="example-radio-group"
+                  [(ngModel)]="electricityDay">
+                  <mat-radio-button class="example-radio-button"  value="Yes">
+                    Yes
+                  </mat-radio-button>&nbsp;&nbsp;
+                  <mat-radio-button class="example-radio-button"  value="No">
+                    No
+                  </mat-radio-button>
+
+                </mat-radio-group>
+                <br>
+                <br>
+                <label id="electricityNight" class="label"><span class="label">Is there electricity during night?</span><br><span>(क्या रात में बिजली आती है?)</span></label>
+                <br>
+                <br>
+                <mat-radio-group
+                aria-labelledby="electricityNight"
+                class="example-radio-group"
+                [(ngModel)]="electricityNight">
+                <mat-radio-button class="example-radio-button"  value="Yes">
+                Yes
+                </mat-radio-button>&nbsp;&nbsp;
+                <mat-radio-button class="example-radio-button"  value="No">
+                No
+                </mat-radio-button>
+
+                </mat-radio-group>
+                <br>
+                <br>
+                <label id="ration" class="label"><span class="label">Are you having shortage of ration?</span><br><span>
+                  (क्या आपको राशन की कमी है?)</span></label>
+                    <br>
+                    <br>
+                <mat-radio-group
+                  aria-labelledby="ration"
+                  class="example-radio-group"
+                  [(ngModel)]="ration">
+                  <mat-radio-button class="example-radio-button"  value="Yes">
+                    Yes
+                  </mat-radio-button>&nbsp;&nbsp;
+                  <mat-radio-button class="example-radio-button"  value="No">
+                    No
+                  </mat-radio-button>
+
+                </mat-radio-group>
+                <br>
+                <br>
+                <label id="rationShop" class="label"><span class="label">Are you having ration shops in your area?</span><br><span>(क्या आपके क्षेत्र में राशन की दुकानें हैं?)</span></label>
+                    <br>
+                    <br>
+                <mat-radio-group
+                  aria-labelledby="rationShop"
+                  class="example-radio-group"
+                  [(ngModel)]="rationShop">
+                  <mat-radio-button class="example-radio-button"  value="Yes">
+                    Yes
+                  </mat-radio-button>&nbsp;&nbsp;
+                  <mat-radio-button class="example-radio-button"  value="No">
+                    No
+                  </mat-radio-button>
+
+                </mat-radio-group>
+                <br>
+                <br>
+                <label id="suspect" class="label"><span class="label">Do you suspect anyone with COVID-19 symptoms?</span><br><span>(क्या आपको COVID-19 लक्षणों से किसी पर शक है?)</span></label>
+                    <br>
+                    <br>
+                <mat-radio-group
+                  aria-labelledby="suspect"
+                  class="example-radio-group"
+                  [(ngModel)]="suspect">
+                  <mat-radio-button class="example-radio-button"  value="Yes">
+                    Yes
+                  </mat-radio-button>&nbsp;&nbsp;
+                  <mat-radio-button class="example-radio-button"  value="No">
+                    No
+                  </mat-radio-button>
+
+                </mat-radio-group>
+                <br>
+                <br>
+                <label id="poor" class="label"><span class="label">Are there poor people who are in need of food or shelter in your area?</span><br><span>
+                  (क्या आपके क्षेत्र में ऐसे गरीब लोग हैं जिन्हें भोजन या आश्रय की आवश्यकता है?)</span></label>
+                    <br>
+                    <br>
+                <mat-radio-group
+                  aria-labelledby="poor"
+                  class="example-radio-group"
+                  [(ngModel)]="poor">
+                  <mat-radio-button class="example-radio-button"  value="Yes">
+                    Yes
+                  </mat-radio-button>&nbsp;&nbsp;
+                  <mat-radio-button class="example-radio-button"  value="No">
+                    No
+                  </mat-radio-button>
+
+                </mat-radio-group>
+                <br>
+                <br>
+                <label id="lockdown" class="label"><span class="label">Are the people in your area following the lockdown rules?</span><br><span>(
+                  क्या आपके क्षेत्र के लोग लॉकडाउन नियमों का पालन कर रहे हैं?)</span></label>
+                    <br>
+                    <br>
+                <mat-radio-group
+                  aria-labelledby="lockdown"
+                  class="example-radio-group"
+                  [(ngModel)]="rules">
+                  <mat-radio-button class="example-radio-button"  value="Yes">
+                    Yes
+                  </mat-radio-button>&nbsp;&nbsp;
+                  <mat-radio-button class="example-radio-button"  value="No">
+                    No
+                  </mat-radio-button>
+
+                </mat-radio-group>
+                <br>
+                <br>
+                <label id="medical" class="label"><span class="label">Do you need any medical help?</span><br><span>(क्या आपको किसी चिकित्सा सहायता की आवश्यकता है?)</span></label>
+                    <br>
+                    <br>
+                <mat-radio-group
+                  aria-labelledby="lockdown"
+                  class="example-radio-group"
+                  [(ngModel)]="medical">
+                  <mat-radio-button class="example-radio-button"  value="Yes">
+                    Yes
+                  </mat-radio-button>&nbsp;&nbsp;
+                  <mat-radio-button class="example-radio-button"  value="No">
+                    No
+                  </mat-radio-button>
+
+                </mat-radio-group>
+                <br>
+                <br>
+
+                <form class="example-form" [formGroup]="fourthFormGroup">
+                  <mat-form-field class="example-full-width">
+                    <mat-label class="label"><span class="label">Leave a comment</span></mat-label>
+                    <textarea matInput placeholder="Ex. It makes me feel..." formControlName="firstCtrl"></textarea>
+                  </mat-form-field>
+                  <br>
+                </form>
+
+                  <div *ngFor="let item of list">
+                    <textarea matInput placeholder="Add problem" [(ngModel)]="addqust"></textarea>
+                    <br>
+                    <br>
+                  </div>
+
+                  <button mat-stroked-button color="primary" (click) ="add()" ><span class="label">Add Problem</span></button>
+                <br>
+                <br>
+                    <div>
+                      <button mat-button matStepperPrevious>Back</button>
+                      <button mat-raised-button  color="primary"(click)= "submit()" *ngIf="electricityNight !== undefined && electricityDay !== undefined && poor !== undefined && ration !== undefined && rationShop !== undefined && medical !== undefined && suspect !== undefined">Submit</button>
+                    </div>
+                  </mat-step>
+                </mat-vertical-stepper>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                </div>
+
+
+
+            </div><!--/row-->
+          </div>
+        </div>
+      </div></div>
+      <br>
+      <br>
+<app-footer style="position: fixed;
+bottom: 0;
+width: 100%;
+line-height: 10px; margin-top: 100px;"></app-footer>

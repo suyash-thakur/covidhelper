@@ -1,0 +1,216 @@
+
+<style>
+  .container, .container-fluid {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .sidebar {
+    width: 23rem!important;
+  }
+ .bg-gradient-primary {
+   background-image: linear-gradient(180deg, #ffffff 10%,#ffffff 100%);
+ }
+
+  .sidebar .sidebar-brand {
+    height: 4.375rem;
+    font-size: 2rem;
+    font-weight: 650;
+    padding: 0.1rem 0.2rem;
+    letter-spacing: .07rem;
+  }
+
+  .list-group-item.active {
+
+    color: #fff;
+    background-color: #0c1a43;
+    border-color: #000000;
+  }
+  .list-group-item {
+    text-align: center;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.25rem;
+    background-color:  #0c1a43;
+    border: 2px solid #fff;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+    background-color: #0c1a43;
+  }
+  .list-group-item.active {
+    color: #fff;
+    background-color: #0c1a43;
+    border-color: #000000;
+  }
+  .sidebar .nav-item .nav-link {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 1.3rem;
+    width: 18.5rem;
+  }
+  .navbar-light .navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1.5em;
+    padding:0.5rem 1.5rem 0.5rem 1.5rem;
+    border-radius:1rem;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+  }
+</style>
+<nav class="navbar navbar-light" style="background-color:white" id="topnav">
+  <a class="navbar-brand " href="#" style="background-color: white; color: white;"><img src="../../assets/asset-1.png" style="max-width: 110px;"></a>
+  <div class="navbar-header navbar-right pull-right">
+    <a style="color: gray; background-color: white;" [routerLink]="['/dashboard']" class="navtext">Dashboard</a>&nbsp;
+
+    <a style="color: gray; background-color: white;" [routerLink]="['/register']" class="navtext">Register</a>
+    &nbsp;
+    <a style="color: gray; background-color: white;" [routerLink]="['/dashboard']" class="navtext">About</a>
+    </div>
+</nav>
+<body id="page-top">
+<!-- Page Wrapper -->
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar" >
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" style="background-color: white; border-bottom: gray 2px solid;">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3" style="color: white;"><img src="../../assets/asset-1.png" style="width: 100%;
+          height: auto; max-width: 300px"></div>
+      </a>
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link "  [routerLink]="['/dashboard']" style="background-color: white;">
+          <i class="fa fa-dashboard" style="color: gray;"></i>
+          <span style="color: gray;">Dashboard</span></a>
+      </li>
+      <hr class="sidebar-divider my-0">
+      <!-- Nav Item - Home -->
+      <li class="nav-item active" >
+        <a class="nav-link" [routerLink]="['/register']" style="background-color: white;">
+          <i class="fa fa-user-plus" style="color: gray;"></i>
+          <span style="color: gray;">Register</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+       <!-- Nav Item - Home -->
+       <li class="nav-item active" >
+        <a class="nav-link bg-primary" [routerLink]="['/about']" >
+          <i class="fa fa-address-card" style="color: white;"></i>
+          <span style="color: white;">About</span></a>
+      </li>
+      <hr class="sidebar-divider my-0">
+      <!-- Nav Item - Dashboard -->
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          <!-- Content Row -->
+
+
+          <!-- Content Row -->
+
+          <div class="container">
+            <div class="row justify-content-between">
+              <div class="col-6">
+                <br>
+                <br>
+                <h3 class="header">ABOUT US</h3>
+                <br>
+                <p class="text" style="border-right: solid 1px gray; text-align: justify !important;  padding-right: 5px;">
+                  Tough times such as the coronavirus pandemic calls for responsible communication. However, a majority of the people facing issues due to the lockdown, are neither able to communicate  their problems nor are able to reach out to other authorities. We understand that most of the people are getting assisted, but there are still some areas that need help and we aim to reach and speak for them.
+                </p>
+              </div>
+              <div class="col-6 my-auto mx-auto" style="text-align: center;">
+                <img src="../../assets/doc abus.png" style="max-width: 300px; width: 100%; height: auto; " >
+              </div>
+
+
+
+                </div><!--/row-->
+                <div class="row justify-content-between">
+                  <div class="col-6 my-auto mx-auto" style="text-align: center;">
+
+                    <img src="../../assets/doc abus2.png" style="max-width: 300px; width: 100%; height: auto;" >
+
+
+                  </div>
+                  <div class="col-6">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <p class="text" style="border-left: solid 1px gray; padding-left: 10px; text-align: justify !important;">
+                      CovidHelper is a real-time stats dashboard where you can fill out the problems you are facing in your area/locality and can also track the neighbouring  areas  who might need your help with basic amenities. CovidHelper will provide your with authentic data  and information about Coronovirus updates in our country. This information will be shared with NGO's and other higher authorities and they can monitor the areas close to them.
+                    </p>
+                  </div>
+
+
+
+                    </div>
+                    <div class="row justify-content-between">
+                      <div class="col-6">
+                        <br>
+                        <br>
+                        <br>
+                        <p class="text" style="border-right: solid 1px gray; text-align: justify !important;  padding-right: 5px;">
+                          CovidHelper is developed and managed by Unicorn Gaming Hub which is an interactive technology (AR/VR/MR) based startup in Gurugram, Haryana.
+                          Equipped with a global outlook, we are a young and dynamic team of creative individuals focused on cultivating a unique and enriching user experience in the fields of AR/VR, mixed reality and interactive gaming.
+                        </p>
+                      </div>
+                      <div class="col-6 my-auto mx-auto" style="text-align: center;">
+                        <img src="../../assets/Vr headset.png" style="max-width: 300px; width: 100%; height: auto;" >
+                      </div>
+
+
+
+                        </div>
+                        <br>
+                        <div style="display: flex; justify-content: center; align-items: center; border-bottom: gray 2px solid; text-align: justify;">
+                          <div style="text-align: center;">
+                            <div>
+                              <img src="../../assets/ugh png.png"  style="max-width: 300px; width: 100%; height: auto;">
+                            </div>
+                            <br>
+                            <br>
+                            <p class="text" style=" text-align: justify !important;">
+                              At U.G.H, we believe that games have the power to awaken and enlighten the masses. Our recipe for this is simple: preparation and insight. Ready to explore beyond the boundaries of existing technologies.
+                            </p>
+                          </div>
+                        </div>
+              </div>
+
+
+            </div>
+              <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>!--/row-->
+          </div>
+      </div>
+
+
+
+<app-footer style="position: fixed;
+bottom: 0;
+width: 100%;
+line-height: 60px;"></app-footer>
+

@@ -1,0 +1,446 @@
+
+<style>
+  .container, .container-fluid {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .sidebar {
+    width: 23rem!important;
+  }
+ .bg-gradient-primary {
+   background-image: linear-gradient(180deg, #ffffff 10%,#ffffff 100%);
+ }
+
+  .sidebar .sidebar-brand {
+    height: 4.375rem;
+    font-size: 2rem;
+    font-weight: 650;
+    padding: 0.1rem 0.2rem;
+    letter-spacing: .07rem;
+  }
+
+  .list-group-item.active {
+
+    color: #fff;
+    background-color: #0c1a43;
+    border-color: #000000;
+  }
+  .list-group-item {
+    text-align: center;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.25rem;
+    background-color:  #0c1a43;
+    border: 2px solid #fff;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+    background-color: #0c1a43;
+  }
+  .list-group-item.active {
+    color: #fff;
+    background-color: #0c1a43;
+    border-color: #000000;
+  }
+  .sidebar .nav-item .nav-link {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 1.3rem;
+    width: 18.5rem;
+  }
+  .navbar-light .navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1.5em;
+    padding:0.5rem 1.5rem 0.5rem 1.5rem;
+    border-radius:1rem;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+  }
+</style>
+<nav class="navbar navbar-light" style="background-color:white" id="topnav">
+  <a class="navbar-brand " href="#" style="background-color: white; color: white;"><img src="../../assets/asset-1.png" style="max-width: 110px;"></a>
+  <div class="navbar-header navbar-right pull-right">
+    <a style="color: gray; background-color: white;" [routerLink]="['/dashboard']" class="navtext">Dashboard</a>&nbsp;
+
+    <a style="color: gray; background-color: white;" [routerLink]="['/register']" class="navtext">Register</a>
+    &nbsp;
+    <a style="color: gray; background-color: white;" [routerLink]="['/about']" class="navtext">About</a>
+    </div>
+</nav>
+<body id="page-top">
+<!-- Page Wrapper -->
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" >
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" style="background-color: white; border-bottom: gray 2px solid;">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3" style="color: white;"><img src="../../assets/asset-1.png" style="width: 100%;
+          height: auto; max-width: 300px"></div>
+      </a>
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link bg-primary"  [routerLink]="['/dashboard']">
+          <i class="fa fa-dashboard"></i>
+          <span style="color: white;">Dashboard</span></a>
+      </li>
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+      <!-- Nav Item - Home -->
+      <li class="nav-item active" >
+        <a class="nav-link" [routerLink]="['/register']" style="background-color: white;">
+          <i class="fa fa-user-plus" style="color: gray;"></i>
+          <span style="color: gray;">Register</span></a>
+      </li>
+
+       <!-- Nav Item - Home -->
+       <li class="nav-item active" >
+        <a class="nav-link" [routerLink]="['/about']" style="background-color: white;">
+          <i class="fa fa-address-card" style="color: gray;"></i>
+          <span style="color: gray;">About</span></a>
+      </li>
+      <hr class="sidebar-divider my-0">
+      <!-- Nav Item - Dashboard -->
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+<div style="display: flex; justify-content: space-between; padding-left: 5%; padding-right: 5%; padding-top: 25px;">
+
+  <div>
+<h4 class="headr2">Select State <br><span>(राज्य चुनें)</span></h4>
+<mat-form-field >
+  <mat-label>State</mat-label>
+  <select matNativeControl required (change)="onChange($event.target.value)" style="max-width: 100px;">
+    <option value="none">None</option>
+      <option value="Andhra Pradesh">Andhra Pradesh</option>
+      <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+      <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+      <option value="Assam">Assam</option>
+      <option value="Bihar">Bihar</option>
+      <option value="Chandigarh">Chandigarh</option>
+      <option value="Chhattisgarh">Chhattisgarh</option>
+      <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+      <option value="Daman and Diu">Daman and Diu</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Lakshadweep">Lakshadweep</option>
+      <option value="Puducherry">Puducherry</option>
+      <option value="Goa">Goa</option>
+      <option value="Gujarat">Gujarat</option>
+      <option value="Haryana">Haryana</option>
+      <option value="Himachal Pradesh">Himachal Pradesh</option>
+      <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+      <option value="Jharkhand">Jharkhand</option>
+      <option value="Karnataka">Karnataka</option>
+      <option value="Kerala">Kerala</option>
+      <option value="Madhya Pradesh">Madhya Pradesh</option>
+      <option value="Maharashtra">Maharashtra</option>
+      <option value="Manipur">Manipur</option>
+      <option value="Meghalaya">Meghalaya</option>
+      <option value="Mizoram">Mizoram</option>
+      <option value="Nagaland">Nagaland</option>
+      <option value="Odisha">Odisha</option>
+      <option value="Punjab">Punjab</option>
+      <option value="Rajasthan">Rajasthan</option>
+      <option value="Sikkim">Sikkim</option>
+      <option value="Tamil Nadu">Tamil Nadu</option>
+      <option value="Telangana">Telangana</option>
+      <option value="Tripura">Tripura</option>
+      <option value="Uttar Pradesh">Uttar Pradesh</option>
+      <option value="Uttarakhand">Uttarakhand</option>
+      <option value="West Bengal">West Bengal</option>
+
+  </select>
+</mat-form-field>
+</div>
+<div>
+<h4 class="headr2">Select City <br><span>(शहर चुनें)</span></h4>
+<mat-form-field >
+  <mat-label>City</mat-label>
+  <select matNativeControl required (change)="onChangeCity($event.target.value)" style="max-width: 100px;">
+    <option value="none">None</option>
+    <option [value] = "item.city" *ngFor="let item of city">{{ item.city }}</option>
+
+  </select>
+</mat-form-field>
+</div>
+<div>
+
+<h4 class="headr2">Select Locality <br><span>
+  (स्थानीयता)</span></h4>
+<mat-form-field >
+  <mat-label>Location</mat-label>
+  <select matNativeControl required (change)="onChangelocality($event.target.value)" style="max-width: 100px;">
+    <option value="none">None</option>
+    <option [value] = "item.locality" *ngFor="let item of locality">{{ item.locality }}</option>
+
+  </select>
+</mat-form-field>
+</div>
+
+</div>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          <!-- Content Row -->
+
+
+          <!-- Content Row -->
+
+          <div class="container">
+            <br>
+            <div class="row" *ngIf="this.city === []">
+              <div class="col"><p *ngIf="this.city === []" class="font-weight-bold text-primary">No data found of selected state</p>
+              </div>
+            </div>
+            <br>
+            <div class="row justify-content-between">
+
+
+
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Indian Cases</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ this.cases }}</div>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fa fa-bar-chart" style="font-size:2em;color:darkgreen"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-warning shadow h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Recovered</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ this.recovered }}</div>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fa fa-bar-chart" style="font-size:2em;color:darkorange"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-danger shadow h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Death</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ this.deaths }}</div>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fa fa-bar-chart" style="font-size:2em;color:darkred"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row row-offcanvas row-offcanvas-right">
+              <div class="col-12 col-md-9">
+                <div class="row">
+                  <div class="col-xs-12 col-lg-6">
+                    <div class="card shadow mb-4">
+                      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">People having no electricity during day?</h6>
+                      </div>
+                      <div class="card-body">
+                        <div class="chart-pie pt-4 pb-2">
+                          <canvas baseChart
+                          [data]="elecDayPie"
+                          [labels]="pieChartLabels"
+                          [chartType]="pieChartType"
+                          ></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!--/span-->
+                  <div class="col-xs-12 col-lg-6">
+                    <div class="card shadow mb-4">
+                      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">People having no electricity during night?</h6>
+                      </div>
+                      <div class="card-body">
+                        <div class="chart-pie pt-4 pb-2">
+                          <canvas baseChart
+                          [data]="elecNightPie"
+                          [labels]="pieChartLabels"
+                          [chartType]="pieChartType"
+                          ></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!--/span-->
+                  <div class="col-xs-12 col-lg-6">
+                    <div class="card shadow mb-4">
+                      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Are you having shortage of ration?</h6>
+                      </div>
+                      <div class="card-body">
+                        <div class="chart-pie pt-4 pb-2">
+                          <!-----------pie-chart---->
+                          <canvas baseChart
+                          [data]="rationPie"
+                          [labels]="pieChartLabels"
+                          [chartType]="pieChartType"
+                          ></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!--/span-->
+                  <div class="col-xs-12 col-lg-6">
+                    <div class="card shadow mb-4">
+                      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Are you having ration shops in your area?</h6>
+                      </div>
+                      <div class="card-body">
+                        <div class="chart-pie pt-4 pb-2">
+                          <!-----------pie-chart---->
+                          <canvas baseChart
+                          [data]="rationShopPie"
+                          [labels]="pieChartLabels"
+                          [chartType]="pieChartType"
+                          ></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!--/span-->
+                  <div class="col-xs-12 col-lg-6">
+                    <div class="card shadow mb-4">
+                      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Do you suspect anyone with COVID-19 symptoms?</h6>
+                      </div>
+                      <div class="card-body">
+                        <div class="chart-pie pt-4 pb-2">
+                          <!-----------pie-chart---->
+                          <canvas baseChart
+                          [data]="suspectPie"
+                          [labels]="pieChartLabels"
+                          [chartType]="pieChartType"
+                          ></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!--/span-->
+                  <div class="col-xs-12 col-lg-6">
+                    <div class="card shadow mb-4">
+                      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Are there poor people who are in need of food or shelter in your area?</h6>
+                      </div>
+                      <div class="card-body">
+                        <div class="chart-pie pt-4 pb-2">
+                          <!-----------pie-chart---->
+                          <canvas baseChart
+                          [data]="poorPie"
+                          [labels]="pieChartLabels"
+                          [chartType]="pieChartType"
+                          ></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-lg-6">
+                    <div class="card shadow mb-4">
+                      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Are the people in your area following the lockdown rules?</h6>
+                      </div>
+                      <div class="card-body">
+                        <div class="chart-pie pt-4 pb-2">
+                          <!-----------pie-chart---->
+                          <canvas baseChart
+                          [data]="rulesPie"
+                          [labels]="pieChartLabels"
+                          [chartType]="pieChartType"
+                          ></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-lg-6">
+                    <div class="card shadow mb-4">
+                      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Do you need any medical help?</h6>
+                      </div>
+                      <div class="card-body">
+                        <div class="chart-pie pt-4 pb-2">
+                          <!-----------pie-chart---->
+                          <canvas baseChart
+                          [data]="MedicalPie"
+                          [labels]="pieChartLabels"
+                          [chartType]="pieChartType"
+                          ></canvas>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><!--/row-->
+                <div class="row">
+                  <div>
+                    <h3 *ngIf="this.problem.length !== 0">Additional Problems</h3>
+                    <ul>
+                      <li *ngFor="let item of problem">
+                        {{ item }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-xs-12 col-md-3 sidebar-offcanvas" id="sidebar">
+                <div class="card" >
+                  <div class="card-header">
+                    Quick Links
+                  </div>
+                  <div class="card-body">
+                <div class="list-group">
+                  <a href=" https://www.worldometers.info/coronavirus/" class="list-group-item " style="background-color: white; border: gray 1px solid; color: gray;" target="_blank">Worldometer</a>
+                  <a href=" https://www.mygov.in/covid-19/" class="list-group-item" style="background-color: white; border: gray 1px solid; color: gray;" target="_blank">Indian Govt site</a>
+                  <a href=" https://www.mohfw.gov.in/" class="list-group-item" style="background-color: white; border: gray 1px solid; color: gray;" target="_blank">Health ministry</a>
+                  <a href="https://who.sprinklr.com/" class="list-group-item" style="background-color: white; border: gray 1px solid; color: gray;" target="_blank">WHO Coronavirus tracking dashboard:</a>
+                  <a href="https://www.covidvisualizer.com/" class="list-group-item" style="background-color: white; border: gray 1px solid; color: gray;" target="_blank">COVID visualizer 3D</a>
+                </div>
+              </div>
+              </div><!--/span-->
+            </div>
+            </div>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+          </div>
+        </div>
+      </div></div>
+      <br>
+      <br>
+      <br>
+
+<app-footer style="position: fixed;
+bottom: 0;
+width: 100%;
+line-height: 60px;"></app-footer>
